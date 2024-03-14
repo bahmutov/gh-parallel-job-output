@@ -11,9 +11,11 @@ async function main() {
     console.log('I am the first job!')
     fs.writeFileSync('status.json', JSON.stringify({ status: 'done' }))
     console.log('status.json written!')
-    const { id, size } = await artifactClient.uploadArtifact('status', [
-      'status.json',
-    ])
+    const { id, size } = await artifactClient.uploadArtifact(
+      'status',
+      ['status.json'],
+      '.',
+    )
     console.log('status.json uploaded!', { id, size })
   } else {
     // how to read the status from other jobs?
