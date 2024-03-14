@@ -1,0 +1,23 @@
+{
+  "name": "gh-parallel-job-output",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bahmutov/gh-parallel-job-output.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bahmutov/gh-parallel-job-output/issues"
+  },
+  "homepage": "https://github.com/bahmutov/gh-parallel-job-output#readme",
+  "devDependencies": {
+    "prettier": "^3.2.5"
+  }
+}
