@@ -21,6 +21,7 @@ jobs:
         # https://github.com/bahmutov/npm-install
         uses: bahmutov/npm-install@v1
       - name: Run script
+        id: main
         run: node ./main
         env:
           JOB_TOTAL: ${{ strategy.job-total }}
