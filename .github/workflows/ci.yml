@@ -1,0 +1,27 @@
+# github workflow with two parallel jobs
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  parallel:
+    strategy:
+      fail-fast: false
+      matrix:
+        job: [1, 2]
+
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Install dependencies
+        # https://github.com/bahmutov/npm-install
+        uses: bahmutov/npm-install@v1
+      - name: Run script
+        run: node ./main
+        env:
+          JOB_TOTAL: ${{ strategy.job-total }}
+          JOB_INDEX: ${{ strategy.job-index }}
