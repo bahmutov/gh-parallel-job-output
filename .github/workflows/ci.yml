@@ -6,6 +6,10 @@ on:
     branches:
       - main
 
+permissions:
+  contents: read
+  actions: write
+
 jobs:
   parallel:
     strategy:
@@ -25,4 +29,3 @@ jobs:
         env:
           JOB_TOTAL: ${{ strategy.job-total }}
           JOB_INDEX: ${{ strategy.job-index }}
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
